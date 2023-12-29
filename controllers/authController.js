@@ -47,7 +47,7 @@ const protect = async function (req, res, next) {
   next();
 };
 const restrictTo = (...roles) =>
-  async function (req, res, next) {
+  function (req, res, next) {
     console.log(req.role);
     if (!roles.includes(req.role)) {
       return responseData.responseReturn(
